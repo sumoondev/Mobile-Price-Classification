@@ -69,8 +69,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 📌 File paths with environment variable support
-train_path = os.getenv("TRAIN_PATH", "train.csv")
-test_path = os.getenv("TEST_PATH", "test.csv")
+train_path = os.getenv("TRAIN_PATH", "/home/xlegion/Documents/FDS/train.csv")
+test_path = os.getenv("TEST_PATH", "/home/xlegion/Documents/FDS/test.csv")
 
 # 🔍 Enhanced file check
 if not os.path.exists(train_path) or not os.path.exists(test_path):
@@ -154,6 +154,18 @@ with tabs[0]:
                     max_val = 8000
                 elif feature == "n_cores":
                     max_val = 12
+                elif feature == "m_dep":
+                    min_val = 0.0
+                    max_val = 1.0
+                    value = 0.5
+                    inputs[feature] = st.slider(
+                        f"📊 {feature.replace('_', ' ').title()}", 
+                        min_val, max_val, value,
+                        step=0.1,
+                        key=feature,
+                        help=f"Typical range: {min_val} - {max_val}"
+                    )
+                    continue
 
                 value = int(df_train[feature].median())
                 
@@ -176,7 +188,7 @@ with tabs[0]:
                     
                     # 📊 Animated result display
                     price_ranges = {
-                        0: ("Budget 💰", "#28a745"),
+                        0: ("Low- 💰", "#28a745"),
                         1: ("Mid-Range 💎", "#ffc107"),
                         2: ("High-End ✨", "#17a2b8"),
                         3: ("Premium 👑", "#dc3545")
@@ -189,7 +201,7 @@ with tabs[0]:
                         # Add confidence bar chart
                         fig = go.Figure(data=[
                             go.Bar(
-                                x=['Budget', 'Mid-Range', 'High-End', 'Premium'],
+                                x=['Low-', 'Mid-Range', 'High-End', 'Premium'],
                                 y=proba * 100,
                                 marker_color=['#28a745', '#ffc107', '#17a2b8', '#dc3545']
                             )
@@ -280,8 +292,8 @@ with metric_tabs[1]:
     fig = px.imshow(
         confusion_matrix(y_val, model.predict(X_val)),
         labels=dict(x="Predicted Label", y="True Label", color="Count"),
-        x=['Budget', 'Mid-Range', 'High-End', 'Premium'],
-        y=['Budget', 'Mid-Range', 'High-End', 'Premium'],
+        x=['Low-Range', 'Mid-Range', 'High-End', 'Premium'],
+        y=['Low-Range', 'Mid-Range', 'High-End', 'Premium'],
         text_auto=True,
         aspect="auto"
     )
@@ -318,6 +330,7 @@ with st.expander("Learn More About the Mobile Price Predictor"):
     - **Backend:** Python with scikit-learn
     - **ML Model:** Support Vector Machine with GridSearchCV optimization
     - **Data Processing:** Pandas & NumPy
+    
     """)
 
 # Add footer with light text on dark background
