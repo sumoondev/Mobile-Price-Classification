@@ -38,7 +38,7 @@ To set up the project, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/PhantomBenz/Mobile-Price-Classification.git
-   cd Mobile-Price-Classification
+   cd Mobile-Price-Classification/FDS
 2. Install the required dependencies:
    ```bash
    pip install pandas numpy scikit-learn matplotlib seaborn
