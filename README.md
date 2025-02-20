@@ -13,9 +13,6 @@ This app leverages a Support Vector Machine (SVM) classifier with optimized hype
 - [Usage](#usage)
 - [Model Evaluation](#model-evaluation)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Project Overview
 The Mobile Price Classification project aims to classify mobile phones into different price ranges using their specifications. The model is built using a Support Vector Machine (SVM) classifier, which has been optimized for better performance.
