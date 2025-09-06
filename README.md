@@ -36,10 +36,11 @@ To set up the project, follow these steps:
    ```bash
    git clone https://github.com/sumoondev/Mobile-Price-Classification.git
    cd Mobile-Price-Classification/FDS
+   ```
 2. Install the required dependencies:
    ```bash
    pip install pandas numpy scikit-learn matplotlib seaborn
-
+   ```
 ## Usage
 To use the application, run the main script or Jupyter Notebook provided in the repository. The steps include:
 
@@ -47,7 +48,8 @@ To use the application, run the main script or Jupyter Notebook provided in the 
 Preprocess the data (handle missing values, normalize features).
 Train the SVM model with the training data.
 Evaluate the model on the test data.
-Model Evaluation
+
+## Model Evaluation
 The model's performance is evaluated using metrics such as:
 
 Accuracy
