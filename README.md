@@ -3,13 +3,16 @@
 This app leverages a Support Vector Machine (SVM) classifier with optimized hyperparameters to predict mobile phone price ranges based on specifications.
 
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Dataset](#dataset)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Model Evaluation](#model-evaluation)
-- [Results](#results)
+- [Mobile Price Classification](#mobile-price-classification)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Features](#features)
+  - [Dataset](#dataset)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Load the dataset.](#load-the-dataset)
+  - [Model Evaluation](#model-evaluation)
+  - [Results](#results)
 
 ## Project Overview
 The Mobile Price Classification project aims to classify mobile phones into different price ranges using their specifications. The model is built using a Support Vector Machine (SVM) classifier, which has been optimized for better performance.
@@ -35,7 +38,7 @@ To set up the project, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/sumoondev/Mobile-Price-Classification.git
-   cd Mobile-Price-Classification/FDS
+   cd Mobile-Price-Classification/
    ```
 2. Install the required dependencies:
    ```bash
